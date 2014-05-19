@@ -8,6 +8,7 @@ default: &default
   adapter: sqlite3
   pool: 5
   timeout: 5000
+  encoding: unicode
 
 development:
   <<: *default
@@ -21,5 +22,15 @@ test:
   database: db/test.sqlite3
 
 production:
-  <<: *default
-  database: db/production.sqlite3
+  #<<: *default
+  #database: db/production.sqlite3
+   adapter: postgresql
+   encoding: unicode
+    # For details on connection pooling, see rails configuration guide
+    # http://guides.rubyonrails.org/configuring.html#database-pooling
+   pool: 5
+   database: d8n5n6t128cmgn
+   login: xfvgwlxtcejagu
+   password: ljm6ODwP0YVqhWuGKK9MacKsCc
+   port: 5432
+   host: ec2-54-243-49-204.compute-1.amazonaws.com
